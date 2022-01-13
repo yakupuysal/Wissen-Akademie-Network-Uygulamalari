@@ -1,0 +1,42 @@
+Switch(config)#int f0/24
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode tr
+Switch(config-if)#switchport mode trunk 
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to up
+
+Switch(config-if)#int g0/1
+Switch(config-if)#exi
+Switch(config)#int f0/1
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode ac
+Switch(config-if)#switchport mode access 
+Switch(config-if)#swi
+Switch(config-if)#switchport acc
+Switch(config-if)#switchport access cl
+Switch(config-if)#switchport access v
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#exi
+Switch(config)#
+Switch(config)#int f0/2
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#exi
+Switch(config)#vtp
+Switch(config)#vtp mo
+Switch(config)#vtp mode c
+Switch(config)#vtp
+Switch(config)#vtp mo
+Switch(config)#vtp mode c
+Switch(config)#vtp mode client 
+Setting device to VTP CLIENT mode.
+Switch(config)#
+Switch(config)#dom
+Switch(config)#vtp
+Switch(config)#vtp doma
+Switch(config)#vtp domain wissen

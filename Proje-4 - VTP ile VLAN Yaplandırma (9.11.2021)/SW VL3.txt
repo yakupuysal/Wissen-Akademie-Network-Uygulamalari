@@ -1,0 +1,19 @@
+Switch(config)#vtp mode client 
+Setting device to VTP CLIENT mode.
+Switch(config)#vtp
+Switch(config)#vtp do
+Switch(config)#vtp domain wissen
+
+
+Switch(config)#int range f0/1-2
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport mo
+Switch(config-if-range)#switchport mode ac
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport ac
+Switch(config-if-range)#switchport access vlan 3
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#do sh vl

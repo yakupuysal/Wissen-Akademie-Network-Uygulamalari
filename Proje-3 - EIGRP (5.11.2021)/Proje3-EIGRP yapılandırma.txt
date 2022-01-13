@@ -1,0 +1,46 @@
+		Router0
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 172.16.5.1 255.255.255.0
+  (config)# int s0/0 (DCE)
+  (config-if)# ip address 192.168.14.1 255.255.255.0
+  (config-if)# clock rate 128000
+  
+    Routing
+   ---------
+    (config)# router eigrp 100
+    (config-router)#network 172.16.5.0 0.0.0.255
+    (config-router)#network 192.168.14.0 0.0.0.255
+    (config-router)#no auto-summary
+
+		Router1
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 192.168.1.1 255.255.255.0
+  (config)# int s0/0
+  (config-if)# ip address 192.168.14.2 255.255.255.0
+  (config)# int s0/1
+  (config-if)# ip address 192.168.15.1 255.255.255.0
+  
+    Routing
+   ---------
+    (config)# router eigrp 100
+    (config-router)#network 192.168.14.0 0.0.0.255
+    (config-router)#network 192.168.1.0 0.0.0.255
+    (config-router)#network 192.168.15.0 0.0.0.255
+    (config-router)#no auto-summary
+
+		Router4
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 172.16.6.1 255.255.255.0
+  (config)# int s0/0 (DCE)
+  (config-if)# ip address 192.168.15.2 255.255.255.0
+  (config-if)# clock rate 128000
+  
+    Routing
+   ---------
+    (config)# router eigrp 100
+    (config-router)#network 192.168.15.0 0.0.0.255
+    (config-router)#network 172.16.6.0 0.0.0.255
+    (config-router)#no auto-summary

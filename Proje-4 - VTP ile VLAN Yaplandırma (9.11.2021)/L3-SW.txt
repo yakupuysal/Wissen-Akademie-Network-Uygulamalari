@@ -1,0 +1,5 @@
+VTP tanýmla
+
+VLAN taným
+
+VLAN interface ip ver

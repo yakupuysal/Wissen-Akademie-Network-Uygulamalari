@@ -1,0 +1,24 @@
+Switch(config)#vtp mode client 
+Setting device to VTP CLIENT mode.
+Switch(config)#vtp
+Switch(config)#vtp do
+Switch(config)#vtp domain wissen
+Changing VTP domain name from NULL to wissen
+Switch(config)#
+Switch(config)#int f0/24
+Switch(config-if)#sw
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode tr
+Switch(config-if)#switchport mode trunk
+
+
+Switch(config)#int range f0/1-2
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport mo
+Switch(config-if-range)#switchport mode ac
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport ac
+Switch(config-if-range)#switchport access vlan
+Switch(config-if-range)#switchport access vlan 4
+Switch(config-if-range)#do sh vl br

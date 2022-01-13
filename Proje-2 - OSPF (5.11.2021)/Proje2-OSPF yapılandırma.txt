@@ -1,0 +1,61 @@
+		Router0
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 192.168.1.1 255.255.255.0
+  (config)# int s0/0 (DCE)
+  (config-if)# ip address 192.168.2.1 255.255.255.0
+  (config-if)# clock rate 128000
+  
+  Routing
+ ---------
+    (config)# router ospf 100
+    (config-router)# network 192.168.1.0 0.0.0.255 area 0
+    (config-router)# network 192.168.2.0 0.0.0.255 area 0
+
+		Router2
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 192.168.4.1 255.255.255.0
+  (config)# int s0/0
+  (config-if)# ip address 192.168.3.2 255.255.255.0
+  (config-if)# clock rate 128000
+  
+  Routing
+ ---------
+    (config)# router ospf 100
+    (config-router)# network 192.168.3.0 0.0.0.255 area 0
+    (config-router)# network 192.168.4.0 0.0.0.255 area 0
+
+
+		Router3
+----------------------------------------------
+  (config)# int f0/0
+  (config-if)# ip address 192.168.6.1 255.255.255.0
+  (config)# int s0/0
+  (config-if)# ip address 192.168.5.2 255.255.255.0
+  
+  
+  Routing
+ ---------
+    (config)# router ospf 100
+    (config-router)# network 192.168.5.0 0.0.0.255 area 0
+    (config-router)# network 192.168.6.0 0.0.0.255 area 0
+
+
+		Router1
+----------------------------------------------
+  (config)# int s0/0
+  (config-if)# ip address 192.168.2.0 255.255.255.0
+  (config)# int s0/1
+  (config-if)# ip address 192.168.3.0 255.255.255.0
+  (config)# int s0/2
+  (config-if)# ip address 192.168.5.0 255.255.255.0
+  (config-if)# clock rate 128000
+  
+  
+  Routing
+ ---------
+    (config)# router ospf 100
+    (config-router)# network 192.168.2.0 0.0.0.255 area 0
+    (config-router)# network 192.168.3.0 0.0.0.255 area 0
+    (config-router)# network 192.168.5.0 0.0.0.255 area 0
